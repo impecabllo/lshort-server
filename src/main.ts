@@ -10,6 +10,7 @@ async function bootstrap() {
 
   app.enableCors({
     origin: function (origin, callback) {
+      console.log(origin)
       if (whitelist.indexOf(origin) !== -1 || process.env.NODE_ENV === "development" || !origin) {
         callback(null, true)
       } else {
