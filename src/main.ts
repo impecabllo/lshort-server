@@ -15,6 +15,7 @@ async function bootstrap() {
   const whitelist = ["https://lshort.ru", "https://www.lshort.ru"]
 
   app.enableCors({
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"],
     origin: function (origin, callback) {
       if (whitelist.indexOf(origin) !== -1 || process.env.NODE_ENV === "development" || !origin) {
         callback(null, true)
