@@ -4,9 +4,9 @@ import { ValidationPipe } from "@nestjs/common"
 import { AppModule } from "./app.module"
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {
-    cors: true,
-  })
+  const app = await NestFactory.create(AppModule)
+
+  app.enableCors()
 
   // const whitelist = ["https://lshort.ru", "https://www.lshort.ru"]
 
